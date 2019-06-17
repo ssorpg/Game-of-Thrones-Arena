@@ -9,8 +9,9 @@ var losses = 0;
 const possibleCharacters = [
     ['Bronn', 'Jon Snow', 'Arya Stark', 'Gregor Clegane'],
     ['bronn.jpg', 'jonsnow.jpg', 'aryastark.jpg', 'gregorclegane.jpg'],
-    [100, 130, 80, 160],
-    [6, 7, 10, 5]
+    [100, 120, 80, 140],
+    [6, 5, 9, 4],
+    [14, 13, 16, 9]
 ];
 
 // Reset every game
@@ -48,6 +49,9 @@ function characterSelect(player) {
 
     currentStage++; // Next stage
 
+    $('.character').find('.counter').css('display', 'block'); // Turn on the counter attack display
+    $('.character').find('.attack').css('display', 'none'); // Turn off the attack display
+
     $('#instructions').text('Select an opponent to fight');
     $('#versus').text('VERSUS');
 }
@@ -66,7 +70,7 @@ function selectFight(opponent) {
 
     opponentName = $('.opponentCharacter').find('.name').text(); // Get our opponent's attributes
     opponentHealth = parseInt($(opponent).attr('health'));
-    opponentAttack = parseInt($(opponent).attr('attack'));
+    opponentAttack = parseInt($(opponent).attr('counter'));
 
     currentStage++;
 
@@ -198,11 +202,13 @@ function setupPage() {
         let image = possibleCharacters[1][x];
         let health = possibleCharacters[2][x];
         let attack = possibleCharacters[3][x];
+        let counter = possibleCharacters[4][x];
 
         let newCharacter = $('<button>');
         newCharacter.attr('class', 'character col-2');
         newCharacter.attr('health', health);
         newCharacter.attr('attack', attack);
+        newCharacter.attr('counter', counter);
 
         let newName = $('<span>');
         newName.attr('class', 'name');
@@ -219,10 +225,16 @@ function setupPage() {
         newAttack.attr('class', 'attack');
         newAttack.text('Attack: ' + attack);
 
+        let newCounter = $('<span>');
+        newCounter.attr('class', 'counter');
+        newCounter.text('Counter: ' + counter);
+        newCounter.css('display', 'none'); // Hide the counter values until we select a character
+
         newCharacter.append(newName);
         newCharacter.append(newImage);
         newCharacter.append(newHealth);
         newCharacter.append(newAttack);
+        newCharacter.append(newCounter);
 
         $(newCharacter).on('click', function () {
             handleClick(this);
