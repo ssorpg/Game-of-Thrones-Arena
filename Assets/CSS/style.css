@@ -1,0 +1,42 @@
+body {
+    background-image: url('../Images/background.jpg');
+    color: #ffffff;
+}
+h1 {
+    text-align: center;
+}
+#wrapper {
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+}
+button {
+    background-color: #4CAF50;
+    border: solid #e7e7e7 1px;
+    color: #ffffff;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 21px;
+    margin: 1%;
+}
+span {
+    display: block;
+    min-height: 1.25em;
+}
+#divider {
+    border: solid #e7e7e7 1px;
+}
+#versus {
+    margin-bottom: 12%;
+}
+#score {
+    font-size: 20px;
+}
+#gameResult {
+    font-size: 32px;
+}
+img {
+    width: 65%;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Game of Thrones Arena</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!--jQuery-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="Assets/CSS/style.css">
+</head>
+
+<body>
+    <h1>Game of Thrones Arena</h1>
+
+    <div id="wrapper">
+        <h2>Instructions:</h2>
+        <h4 id="instructions"></h4>
+
+        <div id="characterList" class="row"></div>
+
+        <p id="divider" class="row"></p>
+
+        <div id="fightArea" class="row">
+            <p id="attackResult" class="col-2">
+                <span id="versus" class="row"></span>
+                <span id="damageDealt" class="row"></span>
+                <span id="damageTaken" class="row"></span>
+                <span id="matchResult" class="row"></span>
+            </p>
+        </div>
+
+        <p id="score">
+            <span id="wins">Wins: 0</span>
+            <span id="losses">Losses: 0</span>
+        </p>
+
+        <p id="restartDiv"></p>
+        <p id="gameResult"></p>
+    </div>
+
+    <!--Game Javascript-->
+    <script type="text/javascript" src="Assets/Javascript/game.js"></script>
+</body>
+
+</html>
